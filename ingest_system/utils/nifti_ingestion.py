@@ -3,7 +3,7 @@ import nibabel as nib
 import numpy as np
 from nibabel.processing import resample_img
 from loguru import logger
-from helpers.parameters import Becik4UParameters
+from parameters import Becik4UParameters
 
 class NIFTIIngestion:
     """

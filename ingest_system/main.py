@@ -1,5 +1,10 @@
+#!/usr/bin/python3
+import os
+import sys
 import argparse
-from helpers.parameters import Becik4UParameters
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'helpers')))
+from parameters import Becik4UParameters
 from utils.dicom_ingestion import DICOMIngestion
 from utils.nifti_ingestion import NIFTIIngestion
 
@@ -9,6 +14,8 @@ class IngestSystem:
     """
 
     def __init__(self):
+        logger.remove(0)
+        logger.add(sys.stderr, format = "<red>[{level}]</red> <green>{message}</green> ", colorize=True)
         self.params = Becik4UParameters()
 
     def ingest_dicom(self, id: str, source_root: str) -> None:

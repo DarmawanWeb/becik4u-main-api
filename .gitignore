@@ -1,0 +1,41 @@
+# Python Bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environments
+env/
+venv/
+ENV/
+.venv/
+
+# VSCode settings
+.vscode/
+
+# Pytest
+.cache/
+*.cover
+*.hypothesis/
+
+# Distribution / Packaging
+build/
+dist/
+*.egg-info/
+
+# IDE / Editor files
+.idea/
+*.swp
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# Logs
+*.log
+
+# Python packaging
+*.egg
+*.tar.gz
+*.whl
+
+# Databases
+*.sqlite3

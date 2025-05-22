@@ -2,7 +2,7 @@ import os
 import shutil
 from loguru import logger
 import dicom2nifti
-from helpers.parameters import Becik4UParameters
+from parameters import Becik4UParameters
 
 class DICOMIngestion:
     """
