@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 import os
 import sys
+import json
+from loguru import logger
 import argparse
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'helpers')))
@@ -21,7 +23,7 @@ class IngestSystem:
     def ingest_dicom(self, id: str, source_root: str) -> None:
         """Ingest DICOM files and display results."""
         dcm_nft_root = DICOMIngestion.ingest_and_convert(self.params, id, source_root)
-        print("#^^# JSON REPORT #**#")
+        logger.info("JSON REPORT #")
         self.get_dir_info(dcm_nft_root)
 
     def ingest_nifti(self, id: str, file_name: str) -> None:
@@ -32,7 +34,7 @@ class IngestSystem:
         """Get directory information of NIfTI files."""
         full_path = os.path.abspath(root_dir)
         files = [os.path.join(full_path, x) for x in os.listdir(full_path)]
-        report = [get_nifti_file_info(x) for x in files]
+        report = [NIFTIIngestion.get_nifti_file_info(x) for x in files]
         dir_jstr = json.dumps(report, indent=2)
         print(dir_jstr)
 
