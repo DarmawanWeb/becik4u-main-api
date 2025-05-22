@@ -36,7 +36,7 @@ class IngestSystem:
         files = [os.path.join(full_path, x) for x in os.listdir(full_path)]
         report = [NIFTIIngestion.get_nifti_file_info(x) for x in files]
         dir_jstr = json.dumps(report, indent=2)
-        print(dir_jstr)
+        logger.info(dir_jstr)
 
 def main():
     parser = argparse.ArgumentParser(description="Becik4U Ingest System")
