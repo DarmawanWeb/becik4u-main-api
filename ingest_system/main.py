@@ -39,6 +39,9 @@ class IngestSystem:
         logger.info(dir_jstr)
 
 def main():
+    """
+    Main function to parse command-line arguments and run the ingestion system.
+    """
     parser = argparse.ArgumentParser(description="Becik4U Ingest System")
 
     subparsers = parser.add_subparsers(dest="option", required=True)
